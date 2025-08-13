@@ -57,7 +57,7 @@ const TablePage: React.FC = () => {
             {/* Form */}
             <div className="flex flex-col gap-4 w-full max-w-xl backdrop-blur-2xl mb-6 p-4 bg-gray-50 rounded-lg p-5 ">
                 <input name="paperTitle" placeholder="Title" value={form.paperTitle} onChange={handleChange}
-                       className="defaultStyle"/>
+                       className="defaultStyle "/>
                 <input name="authorNames" placeholder="Author Name" value={form.authorNames} onChange={handleChange}
                        className="defaultStyle"/>
                 <input name="year" placeholder="Year" value={form.year} onChange={handleChange}
