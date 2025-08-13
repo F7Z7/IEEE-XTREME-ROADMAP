@@ -34,7 +34,7 @@ const TablePage: React.FC = () => {
     };
 
     // Add row to table
-    const handleAddRow = () => {
+    const handleAddData = () => {
         if (!form.authorNames || !form.paperTitle) return;
         setRows([...rows, form]);
         setForm({
@@ -49,7 +49,19 @@ const TablePage: React.FC = () => {
             remarks: "",
         });
     };
-
+    const handleClearData = () => {
+        setForm({
+            slNo: form.slNo + 1,
+            authorNames: "",
+            year: "",
+            paperTitle: "",
+            journalName: "",
+            contentsRelatedToWork: "",
+            merits: "",
+            researchGap: "",
+            remarks: "",
+        });
+    }
     return (
         <div className="p-6">
             <h1 className="text-2xl font-bold mb-4">Literature Review Table</h1>
@@ -75,8 +87,8 @@ const TablePage: React.FC = () => {
 
             </div>
             <div className="flex justify-center items-center gap-5 p-3 ">
-                <Button onClick={handleAddRow} text={"Add Row"} bgColor={"bg-blue-500 hover:bg-blue-400"}/>
-                <Button onClick={handleAddRow} text={"Clear Data"} bgColor={"bg-red-500 hover:bg-red-400"}/>
+                <Button onclick={handleAddData} text={"Add Data"} bgColor={"bg-blue-500 hover:bg-blue-400"}/>
+                <Button onclick={handleClearData} text={"Clear Data"} bgColor={"bg-red-500 hover:bg-red-400"}/>
             </div>
 
             <div className="overflow-x-auto mt-6">
