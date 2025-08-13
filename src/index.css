@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+.defualtStyle{
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d1d5db; /* Tailwind's default border color (gray-300) */
+    border-radius: 0.375rem; /* rounded-md */
+    outline: none;
+}
