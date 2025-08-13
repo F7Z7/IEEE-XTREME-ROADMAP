@@ -36,9 +36,15 @@ const TablePage: React.FC = () => {
     // Add row to table
     const handleAddData = () => {
         if (!form.authorNames || !form.paperTitle) return;
-        setRows([...rows, form]);
+
+        const newRow = {
+            ...form,
+            slNo: rows.length + 1
+        };
+
+        setRows([...rows, newRow]);
         setForm({
-            slNo: form.slNo + 1,
+            slNo: rows.length + 2,
             authorNames: "",
             year: "",
             paperTitle: "",
@@ -49,6 +55,7 @@ const TablePage: React.FC = () => {
             remarks: "",
         });
     };
+
     const handleClearData = () => {
         setForm({
             slNo: form.slNo + 1,
