@@ -72,9 +72,23 @@ const TablePage: React.FC = () => {
     const clearTable = () => {
         setRows([]);
     };
+    const randomData=()=>{
+        setForm({
+            slNo: form.slNo + 1,
+            authorNames: `Author ${Math.floor(Math.random() * 100)}`,
+            year: `${2000 + Math.floor(Math.random() * 26)}`, // random year 2000–2025
+            paperTitle: `Research on Topic ${Math.floor(Math.random() * 50)}`,
+            journalName: `Journal ${Math.floor(Math.random() * 20)}`,
+            contentsRelatedToWork: "Some interesting findings...",
+            merits: "Fast, efficient, scalable",
+            researchGap: "Needs more testing",
+            remarks: "Randomly generated for testing",
+        });
+    }
     return (
         <div className="p-6 flex flex-col justify-center items-center">
             <h1 className="text-2xl font-bold mb-4">Literature Review Table</h1>
+            <Button executeThis={randomData} text={"add random data"} bgColor={"bg-emerald-500 hover:bg-emerald-600"}/>
             {/* Form */}
             <div className="flex flex-col gap-4 w-full max-w-xl backdrop-blur-2xl mb-6 p-4 bg-gray-50 rounded-lg p-5 ">
                 <input name="paperTitle" placeholder="Title" value={form.paperTitle} onChange={handleChange}
