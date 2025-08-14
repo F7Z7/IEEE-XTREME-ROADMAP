@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import Button from "./Button.tsx";
+import {downloadTable} from "../utils/downloadTable.tsx";
 
 interface TableRow {
     slNo: number;
@@ -26,6 +27,14 @@ const TablePage: React.FC = () => {
         researchGap: "",
         remarks: "",
     });
+    const exportRef = useRef<HTMLDivElement>(null);
+
+    const downloadImage = () => {
+        if (exportRef.current) {
+            downloadTable(exportRef.current, "literature-review-table.png");
+        }
+    };
+
 
     // Handle input change
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -85,9 +94,6 @@ const TablePage: React.FC = () => {
             remarks: "Randomly generated for testing",
         });
     }
-    const downloadImage = () => {
-
-    };
     return (
         <div className="p-6 flex flex-col justify-center items-center">
             <h1 className="text-2xl font-bold mb-4">Literature Review Table</h1>
@@ -117,7 +123,7 @@ const TablePage: React.FC = () => {
                 <Button executeThis={handleClearData} text={"Clear Data"} bgColor={"bg-red-500 hover:bg-red-400"}/>
             </div>
 
-            <div className="overflow-x-auto mt-6">
+            <div className="overflow-x-auto mt-6" ref={exportRef}>
                 <table className="table-auto border-collapse border border-gray-300 w-full text-left">
                     <thead className="bg-gray-100">
                     <tr>
