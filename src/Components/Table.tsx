@@ -1,5 +1,6 @@
 import React, {useRef, useState} from 'react';
 import Button from "./Button.tsx";
+import {downloadTable} from "../utils/downloadTable.tsx";
 
 interface TableRow {
     slNo: number;
