@@ -1,7 +1,7 @@
 import html2canvas from "html2canvas";
 
 
-export const downloadTableAsImage = async (element: HTMLElement, filename = "table.png") => {
+export const downloadTable = async (element: HTMLElement, filename = "table.png") => {
     if (!element) return;
 
 
