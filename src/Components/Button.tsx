@@ -1,15 +1,14 @@
-import React from 'react';
 
 interface ButtonProps {
-    onClick: string
+    executeThis: string
     text: string
     bgColor: string
 }
 
-function Button({onclick, text, bgColor}: ButtonProps) {
+function Button({executeThis, text, bgColor}: ButtonProps) {
     return (
         <div>
-            <button onClick={onclick} className={`${bgColor} text-white px-4 py-2 rounded cursor-pointer`}>
+            <button onClick={executeThis} className={`${bgColor} text-white px-4 py-2 rounded cursor-pointer`}>
                 {text}
             </button>
         </div>
