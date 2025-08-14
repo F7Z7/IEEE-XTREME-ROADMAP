@@ -1,6 +1,5 @@
 import React, {useRef, useState} from 'react';
 import Button from "./Button.tsx";
-import {downloadTable} from "../utils/downloadTable.tsx";
 
 interface TableRow {
     slNo: number;
@@ -124,32 +123,32 @@ const TablePage: React.FC = () => {
             </div>
 
             <div className="overflow-x-auto mt-6" ref={exportRef}>
-                <table className="table-auto border-collapse border border-gray-300 w-full text-left">
-                    <thead className="bg-gray-100">
+                <table className="myTable">
+                    <thead className="tableHead">
                     <tr>
-                        <th className="border px-2 py-1">Sl. No</th>
-                        <th className="border px-2 py-1">Author Names</th>
-                        <th className="border px-2 py-1">Year</th>
-                        <th className="border px-2 py-1">Paper Title</th>
-                        <th className="border px-2 py-1">Journal Name</th>
-                        <th className="border px-2 py-1">Contents Related to Work</th>
-                        <th className="border px-2 py-1">Merits</th>
-                        <th className="border px-2 py-1">Research Gap</th>
-                        <th className="border px-2 py-1">Remarks</th>
+                        <th className="tableBorder">Sl. No</th>
+                        <th className="tableBorder">Author Names</th>
+                        <th className="tableBorder">Year</th>
+                        <th className="tableBorder">Paper Title</th>
+                        <th className="tableBorder">Journal Name</th>
+                        <th className="tableBorder">Contents Related to Work</th>
+                        <th className="tableBorder">Merits</th>
+                        <th className="tableBorder">Research Gap</th>
+                        <th className="tableBorder">Remarks</th>
                     </tr>
                     </thead>
                     <tbody>
                     {rows.map((row) => (
                         <tr key={row.slNo}>
-                            <td className="border px-2 py-1">{row.slNo}</td>
-                            <td className="border px-2 py-1">{row.authorNames}</td>
-                            <td className="border px-2 py-1">{row.year}</td>
-                            <td className="border px-2 py-1">{row.paperTitle}</td>
-                            <td className="border px-2 py-1">{row.journalName}</td>
-                            <td className="border px-2 py-1">{row.contentsRelatedToWork}</td>
-                            <td className="border px-2 py-1">{row.merits}</td>
-                            <td className="border px-2 py-1">{row.researchGap}</td>
-                            <td className="border px-2 py-1">{row.remarks}</td>
+                            <td className="tableBorder">{row.slNo}</td>
+                            <td className="tableBorder">{row.authorNames}</td>
+                            <td className="tableBorder">{row.year}</td>
+                            <td className="tableBorder">{row.paperTitle}</td>
+                            <td className="tableBorder">{row.journalName}</td>
+                            <td className="tableBorder">{row.contentsRelatedToWork}</td>
+                            <td className="tableBorder">{row.merits}</td>
+                            <td className="tableBorder">{row.researchGap}</td>
+                            <td className="tableBorder">{row.remarks}</td>
                         </tr>
                     ))}
                     </tbody>
