@@ -85,6 +85,9 @@ const TablePage: React.FC = () => {
             remarks: "Randomly generated for testing",
         });
     }
+    const downloadImage = () => {
+
+    };
     return (
         <div className="p-6 flex flex-col justify-center items-center">
             <h1 className="text-2xl font-bold mb-4">Literature Review Table</h1>
@@ -147,7 +150,7 @@ const TablePage: React.FC = () => {
                 </table>
             </div>
             <div className="flex justify-center items-center gap-5 p-3 ">
-                <Button executeThis={""} text={"Download Table"} bgColor={"bg-green-500 hover:bg-green-400"}/>
+                <Button executeThis={downloadImage} text={"Download Table"} bgColor={"bg-green-500 hover:bg-green-400"}/>
                 <Button executeThis={clearTable} text={"Clear Table"} bgColor={"bg-red-500 hover:bg-red-400"}/>
             </div>
         </div>
