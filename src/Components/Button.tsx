@@ -1,6 +1,6 @@
 
 interface ButtonProps {
-    executeThis: string
+    executeThis: React.MouseEventHandler<HTMLButtonElement>;
     text: string
     bgColor: string
 }
