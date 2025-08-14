@@ -68,11 +68,13 @@ const TablePage: React.FC = () => {
             researchGap: "",
             remarks: "",
         });
-    }
+        }
+    const clearTable = () => {
+        setRows([]);
+    };
     return (
         <div className="p-6 flex flex-col justify-center items-center">
             <h1 className="text-2xl font-bold mb-4">Literature Review Table</h1>
-
             {/* Form */}
             <div className="flex flex-col gap-4 w-full max-w-xl backdrop-blur-2xl mb-6 p-4 bg-gray-50 rounded-lg p-5 ">
                 <input name="paperTitle" placeholder="Title" value={form.paperTitle} onChange={handleChange}
@@ -94,8 +96,8 @@ const TablePage: React.FC = () => {
 
             </div>
             <div className="flex justify-center items-center gap-5 p-3 ">
-                <Button onclick={handleAddData} text={"Add Data"} bgColor={"bg-blue-500 hover:bg-blue-400"}/>
-                <Button onclick={handleClearData} text={"Clear Data"} bgColor={"bg-red-500 hover:bg-red-400"}/>
+                <Button executeThis={handleAddData} text={"Add Data"} bgColor={"bg-blue-500 hover:bg-blue-400"}/>
+                <Button executeThis={handleClearData} text={"Clear Data"} bgColor={"bg-red-500 hover:bg-red-400"}/>
             </div>
 
             <div className="overflow-x-auto mt-6">
@@ -129,6 +131,10 @@ const TablePage: React.FC = () => {
                     ))}
                     </tbody>
                 </table>
+            </div>
+            <div className="flex justify-center items-center gap-5 p-3 ">
+                <Button executeThis={""} text={"Download Table"} bgColor={"bg-green-500 hover:bg-green-400"}/>
+                <Button executeThis={clearTable} text={"Clear Table"} bgColor={"bg-red-500 hover:bg-red-400"}/>
             </div>
         </div>
     );
