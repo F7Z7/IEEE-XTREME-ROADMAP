@@ -29,9 +29,9 @@ const TablePage: React.FC = () => {
     });
     const exportRef = useRef<HTMLDivElement>(null);
 
-    const downloadImage = () => {
+    const downloadImage = async () => {
         if (exportRef.current) {
-            downloadTable(exportRef.current, "literature-review-table.png");
+            await downloadTable(exportRef.current, "literature-review-table.png");
         }
     };
 
