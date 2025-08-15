@@ -32,9 +32,12 @@ const TablePage: React.FC = () => {
 
     const downloadImage = async () => {
         if (exportRef.current) {
-            await downloadTable(exportRef.current, "literature-review-table.png");
+            const tableElement = exportRef.current.querySelector("table");
+            if (tableElement) {
+                await downloadTable(tableElement as HTMLElement, "literature-review-table.png");
+            }
         }
-    };
+    }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target;
