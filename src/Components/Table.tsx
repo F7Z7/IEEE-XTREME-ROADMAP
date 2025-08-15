@@ -27,6 +27,7 @@ const TablePage: React.FC = () => {
         researchGap: "",
         remarks: "",
     });
+    const [firstData, setFirstData] = useState(false);
     const exportRef = useRef<HTMLDivElement>(null);
 
     const downloadImage = async () => {
@@ -42,7 +43,7 @@ const TablePage: React.FC = () => {
 
     const handleAddData = () => {
         if (!form.authorNames || !form.paperTitle) return;
-
+        setFirstData(true);
         const newRow = {
             ...form,
             slNo: rows.length + 1
@@ -78,6 +79,7 @@ const TablePage: React.FC = () => {
 
     const clearTable = () => {
         setRows([]);
+        setFirstData(false);
     };
 
     const randomData = () => {
@@ -166,6 +168,9 @@ const TablePage: React.FC = () => {
                     <Button executeThis={randomData} text={"Add Random Data"}
                             bgColor={"bg-emerald-500 hover:bg-emerald-600"}/>
                 </div>
+                {/*table output table*/}
+                {firstData && (
+                    <>
 
                 <div className="overflow-x-auto w-full mt-6" ref={exportRef}>
                     <table className="myTable">
@@ -204,6 +209,8 @@ const TablePage: React.FC = () => {
                             bgColor={"bg-green-500 hover:bg-green-400"}/>
                     <Button executeThis={clearTable} text={"Clear Table"} bgColor={"bg-red-500 hover:bg-red-400"}/>
                 </div>
+            </>
+            )}
             </div>
         </div>
     );
