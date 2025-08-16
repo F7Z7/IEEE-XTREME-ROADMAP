@@ -85,19 +85,19 @@ const TablePage: React.FC = () => {
         setFirstData(false);
     };
 
-    const randomData = () => {
-        setForm({
-            slNo: form.slNo + 1,
-            authorNames: `Author ${Math.floor(Math.random() * 100)}`,
-            year: `${2000 + Math.floor(Math.random() * 26)}`,
-            paperTitle: `Research on Topic ${Math.floor(Math.random() * 50)}`,
-            journalName: `Journal ${Math.floor(Math.random() * 20)}`,
-            contentsRelatedToWork: "Some interesting findings...",
-            merits: "Fast, efficient, scalable",
-            researchGap: "Needs more testing",
-            remarks: "Randomly generated for testing",
-        });
-    }
+    // const randomData = () => {
+    //     setForm({
+    //         slNo: form.slNo + 1,
+    //         authorNames: `Author ${Math.floor(Math.random() * 100)}`,
+    //         year: `${2000 + Math.floor(Math.random() * 26)}`,
+    //         paperTitle: `Research on Topic ${Math.floor(Math.random() * 50)}`,
+    //         journalName: `Journal ${Math.floor(Math.random() * 20)}`,
+    //         contentsRelatedToWork: "Some interesting findings...",
+    //         merits: "Fast, efficient, scalable",
+    //         researchGap: "Needs more testing",
+    //         remarks: "Randomly generated for testing",
+    //     });
+    // }
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
@@ -168,8 +168,8 @@ const TablePage: React.FC = () => {
                 <div className="flex justify-center items-center gap-5 p-3">
                     <Button executeThis={handleAddData} text={"Add Data"} bgColor={"bg-blue-500 hover:bg-blue-400"}/>
                     <Button executeThis={handleClearData} text={"Clear Data"} bgColor={"bg-red-500 hover:bg-red-400"}/>
-                    <Button executeThis={randomData} text={"Add Random Data"}
-                            bgColor={"bg-emerald-500 hover:bg-emerald-600"}/>
+                    {/*<Button executeThis={randomData} text={"Add Random Data"}*/}
+                    {/*        bgColor={"bg-emerald-500 hover:bg-emerald-600"}/>*/}
                 </div>
                 {/*table output table*/}
                 {firstData && (
